@@ -3,134 +3,316 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Creator's Choice | Gadget Shop</title>
+  <meta name="description" content="Explore beauty and fashion favourites at Luna Beauty & Fashion.">
+  <title>Luna Beauty & Fashion | Demo Shop</title>
   <style>
     * { box-sizing: border-box; }
+
+    :root {
+      --navy: #10233f;
+      --green: #16834a;
+      --pale: #f0fdf4;
+      --muted: #64748b;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f5f7fb;
-      color: #172033;
+      background: #f7f9fc;
+      color: var(--navy);
     }
+
     header {
-      background: #10233f;
+      background: var(--navy);
       color: white;
+      padding: 22px 16px;
       text-align: center;
-      padding: 25px 16px;
     }
-    header h1 { margin: 0 0 8px; }
-    header p { margin: 0; color: #dbeafe; }
-    .intro {
+
+    .brand {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: 1px;
+    }
+
+    header p {
+      margin: 7px 0 0;
+      color: #dbeafe;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      background: white;
+      padding: 14px 8px;
+      border-bottom: 1px solid #e2e8f0;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    .hero {
+      margin: 18px auto;
+      max-width: 900px;
+      padding: 34px 20px;
+      background: #eaf2ff;
+      border-radius: 18px;
       text-align: center;
-      padding: 24px 16px 10px;
     }
-    .intro h2 { margin-bottom: 8px; }
-    .intro p { color: #64748b; }
+
+    .eyebrow {
+      color: var(--green);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(28px, 7vw, 42px);
+      line-height: 1.15;
+      margin: 12px 0;
+    }
+
+    .hero p {
+      max-width: 440px;
+      margin: 0 auto 20px;
+      line-height: 1.6;
+      color: #475569;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--green);
+      color: white;
+      text-decoration: none;
+      padding: 13px 18px;
+      border-radius: 9px;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .section-title {
+      text-align: center;
+      padding: 14px 16px 4px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 8px;
+      font-size: 25px;
+    }
+
+    .section-title p {
+      margin-top: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
-      padding: 16px;
-      max-width: 850px;
+      gap: 13px;
+      max-width: 900px;
       margin: auto;
+      padding: 16px;
     }
+
     .product {
       background: white;
-      padding: 14px;
+      border: 1px solid #e8edf3;
       border-radius: 14px;
-      box-shadow: 0 3px 12px #0000000d;
+      padding: 11px;
+      box-shadow: 0 4px 14px #10233f08;
     }
-    .product .emoji {
-      font-size: 48px;
-      text-align: center;
-      padding: 18px 0;
-      background: #eef4ff;
+
+    .product-art {
+      min-height: 125px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--pale);
       border-radius: 10px;
+      font-size: 54px;
     }
-    .product h3 { font-size: 16px; margin-bottom: 6px; }
-    .price { font-weight: bold; color: #087443; }
+
+    .product h3 {
+      font-size: 15px;
+      margin: 13px 0 7px;
+    }
+
+    .price {
+      font-weight: bold;
+      color: var(--green);
+      margin: 0;
+    }
+
     .order {
       display: block;
       text-align: center;
-      text-decoration: none;
-      background: #16834a;
+      background: var(--green);
       color: white;
-      padding: 11px 6px;
+      text-decoration: none;
+      padding: 11px 5px;
       border-radius: 8px;
-      font-size: 14px;
-      margin-top: 12px;
-    }
-    .contact {
-      display: block;
-      width: fit-content;
-      margin: 10px auto 25px;
-      background: #16834a;
-      color: white;
-      text-decoration: none;
-      padding: 14px 20px;
-      border-radius: 9px;
+      margin-top: 13px;
+      font-size: 12px;
       font-weight: bold;
     }
+
+    .notice {
+      max-width: 850px;
+      margin: 5px auto 25px;
+      padding: 0 18px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .contact {
+      background: white;
+      text-align: center;
+      padding: 28px 16px;
+      margin-top: 10px;
+    }
+
+    .contact p {
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
     footer {
-      background: #10233f;
+      background: var(--navy);
       color: white;
       text-align: center;
       padding: 22px 12px;
-      font-size: 13px;
+      font-size: 12px;
+      line-height: 1.7;
     }
-    @media (max-width: 340px) {
-      .products { grid-template-columns: 1fr; }
+
+    @media (min-width: 600px) {
+      .products {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>Creator's Choice</h1>
-    <p>Your favourite gadgets, all in one place</p>
+    <div class="brand">LUNA</div>
+    <p>BEAUTY &amp; FASHION</p>
   </header>
 
-  <section class="intro">
-    <h2>Our Products</h2>
-    <p>Explore our catalogue and order directly through WhatsApp.</p>
-  </section>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#products">Products</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <main class="products">
-    <article class="product">
-      <div class="emoji">💡</div>
-      <h3>LED Ring Light</h3>
-      <p class="price">₦12,000</p>
-      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20LED%20Ring%20Light.">Order on WhatsApp</a>
-    </article>
+  <main>
+    <section class="hero" id="home">
+      <span class="eyebrow">Your style, your glow</span>
+      <h1>Little things.<br>Beautiful difference.</h1>
+      <p>
+        Discover beauty favourites and fashion essentials
+        chosen to help you feel confident every day.
+      </p>
+      <a class="button" href="#products">Explore our collection</a>
+    </section>
 
-    <article class="product">
-      <div class="emoji">🎙️</div>
-      <h3>Lavalier Microphone</h3>
-      <p class="price">₦15,000</p>
-      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Lavalier%20Microphone.">Order on WhatsApp</a>
-    </article>
+    <section class="section-title" id="products">
+      <h2>Shop our collection</h2>
+      <p>Find your favourites and order through WhatsApp.</p>
+    </section>
 
-    <article class="product">
-      <div class="emoji">📱</div>
-      <h3>Phone Tripod</h3>
-      <p class="price">₦18,000</p>
-      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Phone%20Tripod.">Order on WhatsApp</a>
-    </article>
+    <section class="products">
+      <article class="product">
+        <div class="product-art">🧴</div>
+        <h3>Hydrating Face Cream</h3>
+        <p class="price">₦8,500</p>
+        <a class="order" href="#" data-product="Hydrating Face Cream">Order on WhatsApp</a>
+      </article>
 
-    <article class="product">
-      <div class="emoji">🔊</div>
-      <h3>Portable Speaker</h3>
-      <p class="price">₦10,000</p>
-      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Portable%20Speaker.">Order on WhatsApp</a>
-    </article>
+      <article class="product">
+        <div class="product-art">💄</div>
+        <h3>Everyday Lip Gloss</h3>
+        <p class="price">₦4,000</p>
+        <a class="order" href="#" data-product="Everyday Lip Gloss">Order on WhatsApp</a>
+      </article>
+
+      <article class="product">
+        <div class="product-art">👜</div>
+        <h3>Classic Handbag</h3>
+        <p class="price">₦18,000</p>
+        <a class="order" href="#" data-product="Classic Handbag">Order on WhatsApp</a>
+      </article>
+
+      <article class="product">
+        <div class="product-art">👗</div>
+        <h3>Everyday Dress</h3>
+        <p class="price">₦15,000</p>
+        <a class="order" href="#" data-product="Everyday Dress">Order on WhatsApp</a>
+      </article>
+
+      <article class="product">
+        <div class="product-art">🧴</div>
+        <h3>Body Lotion</h3>
+        <p class="price">₦6,500</p>
+        <a class="order" href="#" data-product="Body Lotion">Order on WhatsApp</a>
+      </article>
+
+      <article class="product">
+        <div class="product-art">👠</div>
+        <h3>Elegant Heels</h3>
+        <p class="price">₦22,000</p>
+        <a class="order" href="#" data-product="Elegant Heels">Order on WhatsApp</a>
+      </article>
+    </section>
+
+    <p class="notice">
+      DEMO STORE: Product names, illustrations and prices are examples.
+      Replace them with the real shop's approved details before launch.
+    </p>
+
+    <section class="contact" id="contact">
+      <h2>Need help choosing?</h2>
+      <p>Contact us with your questions or product enquiries.</p>
+      <a class="button" id="contact-button" href="#">
+        Chat with us on WhatsApp
+      </a>
+    </section>
   </main>
 
-  <a class="contact" href="https://wa.me/2348012345678?text=Hello%2C%20I%20would%20like%20to%20make%20an%20inquiry.">
-    Chat with us on WhatsApp
-  </a>
-
   <footer>
-    <p>Demo catalogue website — sample products and prices.</p>
-    <p>Replace these details with your customer's real business information.</p>
+    <strong>LUNA BEAUTY &amp; FASHION</strong>
+    <p>Demo website created to showcase a small-business catalogue.</p>
   </footer>
+
+  <script>
+    // Replace this sample number with the shop's real number.
+    const WHATSAPP_NUMBER = "2348012345678";
+
+    document.querySelectorAll("[data-product]").forEach(function(button) {
+      const product = button.dataset.product;
+      const message = "Hello! I would like to order " + product + ".";
+      button.href = "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    });
+
+    const contactMessage = "Hello! I have a question about your products.";
+    document.getElementById("contact-button").href =
+      "https://wa.me/" + WHATSAPP_NUMBER +
+      "?text=" + encodeURIComponent(contactMessage);
+  </script>
+
 </body>
 </html>

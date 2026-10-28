@@ -1,33 +1,136 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>My First Website</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Creator's Choice | Gadget Shop</title>
   <style>
+    * { box-sizing: border-box; }
     body {
+      margin: 0;
       font-family: Arial, sans-serif;
-      background: #f1f5f9;
-      color: #172554;
-      text-align: center;
-      padding: 40px 16px;
+      background: #f5f7fb;
+      color: #172033;
     }
-    .card {
-      background: white;
-      padding: 30px 20px;
-      border-radius: 16px;
-      max-width: 420px;
+    header {
+      background: #10233f;
+      color: white;
+      text-align: center;
+      padding: 25px 16px;
+    }
+    header h1 { margin: 0 0 8px; }
+    header p { margin: 0; color: #dbeafe; }
+    .intro {
+      text-align: center;
+      padding: 24px 16px 10px;
+    }
+    .intro h2 { margin-bottom: 8px; }
+    .intro p { color: #64748b; }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      padding: 16px;
+      max-width: 850px;
       margin: auto;
     }
-    h1 { color: #2563eb; }
+    .product {
+      background: white;
+      padding: 14px;
+      border-radius: 14px;
+      box-shadow: 0 3px 12px #0000000d;
+    }
+    .product .emoji {
+      font-size: 48px;
+      text-align: center;
+      padding: 18px 0;
+      background: #eef4ff;
+      border-radius: 10px;
+    }
+    .product h3 { font-size: 16px; margin-bottom: 6px; }
+    .price { font-weight: bold; color: #087443; }
+    .order {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #16834a;
+      color: white;
+      padding: 11px 6px;
+      border-radius: 8px;
+      font-size: 14px;
+      margin-top: 12px;
+    }
+    .contact {
+      display: block;
+      width: fit-content;
+      margin: 10px auto 25px;
+      background: #16834a;
+      color: white;
+      text-decoration: none;
+      padding: 14px 20px;
+      border-radius: 9px;
+      font-weight: bold;
+    }
+    footer {
+      background: #10233f;
+      color: white;
+      text-align: center;
+      padding: 22px 12px;
+      font-size: 13px;
+    }
+    @media (max-width: 340px) {
+      .products { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
-  <div class="card">
-    <h1>Welcome to My Website!</h1>
-    <p>I'm learning to build websites.</p>
-    <p>My online journey starts here.</p>
-  </div>
+  <header>
+    <h1>Creator's Choice</h1>
+    <p>Your favourite gadgets, all in one place</p>
+  </header>
+
+  <section class="intro">
+    <h2>Our Products</h2>
+    <p>Explore our catalogue and order directly through WhatsApp.</p>
+  </section>
+
+  <main class="products">
+    <article class="product">
+      <div class="emoji">💡</div>
+      <h3>LED Ring Light</h3>
+      <p class="price">₦12,000</p>
+      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20LED%20Ring%20Light.">Order on WhatsApp</a>
+    </article>
+
+    <article class="product">
+      <div class="emoji">🎙️</div>
+      <h3>Lavalier Microphone</h3>
+      <p class="price">₦15,000</p>
+      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Lavalier%20Microphone.">Order on WhatsApp</a>
+    </article>
+
+    <article class="product">
+      <div class="emoji">📱</div>
+      <h3>Phone Tripod</h3>
+      <p class="price">₦18,000</p>
+      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Phone%20Tripod.">Order on WhatsApp</a>
+    </article>
+
+    <article class="product">
+      <div class="emoji">🔊</div>
+      <h3>Portable Speaker</h3>
+      <p class="price">₦10,000</p>
+      <a class="order" href="https://wa.me/2348012345678?text=Hello%2C%20I%20want%20to%20order%20the%20Portable%20Speaker.">Order on WhatsApp</a>
+    </article>
+  </main>
+
+  <a class="contact" href="https://wa.me/2348012345678?text=Hello%2C%20I%20would%20like%20to%20make%20an%20inquiry.">
+    Chat with us on WhatsApp
+  </a>
+
+  <footer>
+    <p>Demo catalogue website — sample products and prices.</p>
+    <p>Replace these details with your customer's real business information.</p>
+  </footer>
 </body>
 </html>
